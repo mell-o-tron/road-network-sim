@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhlhfj2v0dn7c"]
+
+[ext_resource type="Script" path="res://ODE Solver/Intersection.gd" id="1_xktjo"]
+[ext_resource type="Script" path="res://Agent Scripts/FlowMonitor.gd" id="2_6rcdm"]
+
+[node name="Intersection" type="Node3D" node_paths=PackedStringArray("flow_monitor")]
+script = ExtResource("1_xktjo")
+flow_monitor = NodePath("FlowMonitor")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(3.93193, 0, 0, 0, 0.131438, 0, 0, 0, 4.11827, 0, 0.185177, 0)
+use_collision = true
+radius = 1.0
+sides = 20
+
+[node name="FlowMonitor" type="Node" parent="."]
+script = ExtResource("2_6rcdm")

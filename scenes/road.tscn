@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxx8qo2qo547s"]
+
+[ext_resource type="Script" path="res://ODE Solver/Road.gd" id="1_3tnj1"]
+[ext_resource type="Texture2D" uid="uid://b0g71x1oh0isx" path="res://Icons/arrow.png" id="2_won83"]
+[ext_resource type="Script" path="res://Agent Scripts/Density Monitor.gd" id="3_78gdw"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("density_monitor")]
+script = ExtResource("1_3tnj1")
+max_density = 0.33
+density_monitor = NodePath("Density Monitor")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(3.5, 0.1, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.03723, 0, 0, 0, -4.53389e-08, -1.03723, 0, 1.03723, -4.53389e-08, 0, 0.0554011, 0)
+texture = ExtResource("2_won83")
+
+[node name="Density Monitor" type="Node" parent="."]
+script = ExtResource("3_78gdw")

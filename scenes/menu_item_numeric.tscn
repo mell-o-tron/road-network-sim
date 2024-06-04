@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch6ecxunbe2tf"]
+
+[ext_resource type="Script" path="res://Interface Scripts/num_panel.gd" id="1_8lahc"]
+
+[node name="MenuItemNumeric" type="Node2D" node_paths=PackedStringArray("label", "number")]
+script = ExtResource("1_8lahc")
+label = NodePath("numeric_panel/Label")
+number = NodePath("numeric_panel/SpinBox")
+
+[node name="numeric_panel" type="Panel" parent="."]
+offset_left = 10.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="numeric_panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 34.0
+text = "prop_name"
+
+[node name="SpinBox" type="SpinBox" parent="numeric_panel"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 5.0
+offset_right = 279.0
+offset_bottom = 36.0
+step = 0.01
+allow_greater = true

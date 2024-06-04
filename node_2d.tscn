@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=3 uid="uid://voasx1rkdle7"]
+
+[ext_resource type="Texture2D" uid="uid://fh8iuj5tgjt0" path="res://textures/Screenshot_20240419_215025.png" id="1_p3s0w"]
+[ext_resource type="Script" path="res://ODE Solver/Road.gd" id="2_hsqnk"]
+[ext_resource type="Script" path="res://ODE Solver/Intersection.gd" id="2_mrsfk"]
+[ext_resource type="Texture2D" uid="uid://bc03wsjyl3h6b" path="res://textures/you-are-here-symbol-png-2-2270203676.png" id="2_mrv3f"]
+[ext_resource type="Script" path="res://ODE Solver/Solver.gd" id="4_7ilh1"]
+[ext_resource type="Theme" uid="uid://qbuwen4klbdg" path="res://new_theme.tres" id="6_alpf8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Screenshot20240419215025" type="Sprite2D" parent="."]
+position = Vector2(585, 320)
+scale = Vector2(0.681302, 0.681302)
+texture = ExtResource("1_p3s0w")
+
+[node name="Via di Pratale" type="Line2D" parent="." node_paths=PackedStringArray("From", "To", "density_label")]
+position = Vector2(1972.88, 1369.37)
+points = PackedVector2Array(-1406.88, -1081.37, -1795.88, -1225.37, -1812.88, -1272.37)
+default_color = Color(0, 0.784314, 0, 1)
+script = ExtResource("2_hsqnk")
+From = NodePath("../Intersection2")
+To = NodePath("../Intersection4")
+road_length = 900.0
+density_label = NodePath("../Label9")
+
+[node name="Via Provinciale" type="Line2D" parent="." node_paths=PackedStringArray("From", "To", "density_label")]
+position = Vector2(1479.66, 1027.02)
+points = PackedVector2Array(-606.661, -916.024, -713.661, -909.024, -910.661, -746.024)
+default_color = Color(0, 0.784314, 0, 1)
+script = ExtResource("2_hsqnk")
+From = NodePath("../Intersection2")
+To = NodePath("../Intersection5")
+road_length = 900.0
+density_label = NodePath("../Label6")
+
+[node name="Via Moruzzi" type="Line2D" parent="." node_paths=PackedStringArray("From", "To", "density_label")]
+position = Vector2(986.441, 684.683)
+points = PackedVector2Array(-12.4406, -136.683, -225.441, -245.683, -424.441, -392.683)
+default_color = Color(0, 0.784314, 0, 1)
+script = ExtResource("2_hsqnk")
+From = NodePath("../Intersection1")
+To = NodePath("../Intersection2")
+alpha = 1.0
+road_length = 1000.0
+density_label = NodePath("../Label7")
+
+[node name="Via Volpi" type="Line2D" parent="." node_paths=PackedStringArray("From", "To", "density_label")]
+position = Vector2(493.22, 342.341)
+points = PackedVector2Array(67.7797, -54.3413, 7.52591, 13.7174, -51.2203, 81.6587)
+default_color = Color(0, 0.784314, 0, 1)
+script = ExtResource("2_hsqnk")
+From = NodePath("../Intersection2")
+To = NodePath("../Intersection3")
+road_length = 400.0
+density_label = NodePath("../Label8")
+
+[node name="Intersection1" type="Sprite2D" parent="." node_paths=PackedStringArray("flow_label")]
+position = Vector2(973, 498)
+scale = Vector2(0.0879351, 0.0879352)
+texture = ExtResource("2_mrv3f")
+script = ExtResource("2_mrsfk")
+flow = 0.5
+is_source = true
+flow_label = NodePath("../Label")
+
+[node name="Intersection2" type="Sprite2D" parent="." node_paths=PackedStringArray("flow_label")]
+position = Vector2(563, 263)
+scale = Vector2(0.0435767, 0.0435767)
+texture = ExtResource("2_mrv3f")
+script = ExtResource("2_mrsfk")
+flow_label = NodePath("../Label2")
+
+[node name="Intersection3" type="Sprite2D" parent="." node_paths=PackedStringArray("flow_label")]
+position = Vector2(435, 415)
+scale = Vector2(0.0426238, 0.0426238)
+texture = ExtResource("2_mrv3f")
+script = ExtResource("2_mrsfk")
+flow_label = NodePath("../Label5")
+
+[node name="Intersection4" type="Sprite2D" parent="." node_paths=PackedStringArray("flow_label")]
+position = Vector2(162, 85)
+scale = Vector2(0.0378505, 0.0378505)
+texture = ExtResource("2_mrv3f")
+script = ExtResource("2_mrsfk")
+flow_label = NodePath("../Label4")
+
+[node name="Intersection5" type="Sprite2D" parent="." node_paths=PackedStringArray("flow_label")]
+position = Vector2(874, 85)
+scale = Vector2(0.0438171, 0.0438171)
+texture = ExtResource("2_mrv3f")
+script = ExtResource("2_mrsfk")
+flow_label = NodePath("../Label3")
+
+[node name="ODE Solver" type="Node" parent="."]
+script = ExtResource("4_7ilh1")
+Roads = [NodePath("../Via di Pratale"), NodePath("../Via Provinciale"), NodePath("../Via Moruzzi"), NodePath("../Via Volpi")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 925.0
+offset_top = 557.0
+offset_right = 1029.0
+offset_bottom = 583.0
+theme = ExtResource("6_alpf8")
+text = "Flow = "
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 602.0
+offset_top = 273.0
+offset_right = 706.0
+offset_bottom = 299.0
+theme = ExtResource("6_alpf8")
+text = "Flow = "
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 868.0
+offset_top = 132.0
+offset_right = 972.0
+offset_bottom = 158.0
+theme = ExtResource("6_alpf8")
+text = "Flow = "
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 205.0
+offset_top = 80.0
+offset_right = 309.0
+offset_bottom = 106.0
+theme = ExtResource("6_alpf8")
+text = "Flow = "
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 393.0
+offset_top = 455.0
+offset_right = 497.0
+offset_bottom = 481.0
+theme = ExtResource("6_alpf8")
+text = "Flow = "
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 691.0
+offset_top = 195.0
+offset_right = 795.0
+offset_bottom = 221.0
+theme = ExtResource("6_alpf8")
+text = "Density = "
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 750.0
+offset_top = 373.0
+offset_right = 854.0
+offset_bottom = 399.0
+theme = ExtResource("6_alpf8")
+text = "Density = "
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 371.0
+offset_top = 311.0
+offset_right = 475.0
+offset_bottom = 337.0
+theme = ExtResource("6_alpf8")
+text = "Density = "
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 345.0
+offset_top = 147.0
+offset_right = 449.0
+offset_bottom = 173.0
+theme = ExtResource("6_alpf8")
+text = "Density = "

@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://blqewxwy61yti"]
+
+[ext_resource type="Script" path="res://Agent Scripts/car.gd" id="1_ry0q8"]
+[ext_resource type="PackedScene" uid="uid://k6csk3oifl87" path="res://Models/panda.glb" id="2_0yg02"]
+[ext_resource type="PackedScene" uid="uid://bw7r7y0lcl4sq" path="res://Models/scuolabus.glb" id="2_5nhrr"]
+[ext_resource type="PackedScene" uid="uid://bg0236urr00ko" path="res://Models/car.glb" id="2_olpgt"]
+[ext_resource type="Texture2D" uid="uid://fw0otqfcctnc" path="res://Icons/car_yellow.png" id="3_6x126"]
+[ext_resource type="Script" path="res://Interface Scripts/rotate.gd" id="4_mpys7"]
+[ext_resource type="PackedScene" uid="uid://bq0etpj0tgwmj" path="res://Models/apino.glb" id="4_qxch1"]
+[ext_resource type="Texture2D" uid="uid://brlmjx22emn7f" path="res://Icons/car_blue.png" id="5_ejsv4"]
+[ext_resource type="Texture2D" uid="uid://bmi7g4l6uajt0" path="res://Icons/sleep.png" id="6_gnl64"]
+[ext_resource type="Texture2D" uid="uid://26h24c4h0o0s" path="res://Icons/crash.png" id="7_jid48"]
+
+[node name="Car" type="Node3D" node_paths=PackedStringArray("highlight", "leader_banner", "sleep", "crash_icon")]
+script = ExtResource("1_ry0q8")
+highlight = NodePath("Highlight")
+leader_banner = NodePath("Leader")
+sleep = NodePath("Sleep")
+crash_icon = NodePath("Crash")
+models = [NodePath("scuolabus"), NodePath("panda"), NodePath("car"), NodePath("apino")]
+lengths = [3.0, 3.0, 3.0, 3.0]
+
+[node name="scuolabus" parent="." instance=ExtResource("2_5nhrr")]
+transform = Transform3D(-0.839, 0, -8.59304e-08, 0, 0.839, 0, 1.26685e-07, 0, -0.569093, 0, 1.11037, -0.369676)
+visible = false
+
+[node name="panda" parent="." instance=ExtResource("2_0yg02")]
+transform = Transform3D(-0.709, 0, -6.19827e-08, 0, 0.709, 0, 6.19827e-08, 0, -0.709, 0, 0.922963, -0.309972)
+visible = false
+
+[node name="car" parent="." instance=ExtResource("2_olpgt")]
+transform = Transform3D(-0.695, 0, -1.04942e-07, 0, 0.695, 0, 1.04942e-07, 0, -0.695, 0, 0.909569, -0.295772)
+visible = false
+
+[node name="apino" parent="." instance=ExtResource("4_qxch1")]
+transform = Transform3D(-0.615, 0, -9.28624e-08, 0, 0.615, 0, 9.28624e-08, 0, -0.615, 0, 0.801256, -0.218008)
+visible = false
+
+[node name="Highlight" type="Sprite3D" parent="."]
+transform = Transform3D(0.624412, 0, 0, 0, 0.624412, 0, 0, 0, 0.624412, 0, 3.93077, 0)
+visible = false
+texture = ExtResource("3_6x126")
+script = ExtResource("4_mpys7")
+
+[node name="Leader" type="Sprite3D" parent="."]
+transform = Transform3D(0.624412, 0, 0, 0, 0.624412, 0, 0, 0, 0.624412, 0, 3.93077, 0)
+visible = false
+texture = ExtResource("5_ejsv4")
+script = ExtResource("4_mpys7")
+
+[node name="Sleep" type="Sprite3D" parent="."]
+transform = Transform3D(0.624412, 0, 0, 0, 0.624412, 0, 0, 0, 0.624412, 0, 3.93077, 0)
+visible = false
+texture = ExtResource("6_gnl64")
+script = ExtResource("4_mpys7")
+
+[node name="Crash" type="Sprite3D" parent="."]
+transform = Transform3D(0.624412, 0, 0, 0, 0.624412, 0, 0, 0, 0.624412, 0, 3.93077, 0)
+visible = false
+texture = ExtResource("7_jid48")
+script = ExtResource("4_mpys7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00140381, 0.968383, -0.00454712)
+visible = false
+use_collision = true
+size = Vector3(1.46423, 1.19543, 2.98785)

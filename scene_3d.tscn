@@ -1,0 +1,242 @@
+[gd_scene load_steps=34 format=3 uid="uid://dug4s4h5mncme"]
+
+[ext_resource type="Script" path="res://Interface Scripts/Camera3D.gd" id="1_2xtao"]
+[ext_resource type="Texture2D" uid="uid://fh8iuj5tgjt0" path="res://textures/Screenshot_20240419_215025.png" id="2_t3j7i"]
+[ext_resource type="Script" path="res://Interface Scripts/road_manager.gd" id="3_7hj05"]
+[ext_resource type="Script" path="res://ODE Solver/Solver.gd" id="4_aaa01"]
+[ext_resource type="Script" path="res://Agent Scripts/agent_manager.gd" id="4_mv4ju"]
+[ext_resource type="Texture2D" uid="uid://dn7frik4i2i5c" path="res://Icons/intersection.png" id="4_oj4wh"]
+[ext_resource type="Texture2D" uid="uid://b05dq615uilpf" path="res://Icons/intersection_click.png" id="5_5gacv"]
+[ext_resource type="Texture2D" uid="uid://tx2gi554ad86" path="res://Icons/road.png" id="5_hws1q"]
+[ext_resource type="Texture2D" uid="uid://bdanmddg8fi3i" path="res://Icons/intersection_hover.png" id="5_rdvf2"]
+[ext_resource type="Texture2D" uid="uid://demas55w1cqhg" path="res://Icons/road_hover.png" id="7_5t4we"]
+[ext_resource type="Texture2D" uid="uid://hdg06b8e0scx" path="res://Icons/road_click.png" id="8_ctt42"]
+[ext_resource type="Texture2D" uid="uid://80pq5xspbbdi" path="res://Icons/close.png" id="10_ucv8d"]
+[ext_resource type="Texture2D" uid="uid://b3lb2g0hp5ju5" path="res://Icons/graph.png" id="11_nco5a"]
+[ext_resource type="Texture2D" uid="uid://dmu23f1nkh55e" path="res://Icons/close_click.png" id="11_y6lwg"]
+[ext_resource type="Script" path="res://Interface Scripts/PauseButton.gd" id="11_yo0le"]
+[ext_resource type="Texture2D" uid="uid://blfkkemyufrkh" path="res://Icons/pause.png" id="12_i3us8"]
+[ext_resource type="Texture2D" uid="uid://d0kwha8fp7r2h" path="res://Icons/close_hover.png" id="12_m3bck"]
+[ext_resource type="Texture2D" uid="uid://c6ugamwqj0noc" path="res://Icons/graph_click.png" id="12_yhi44"]
+[ext_resource type="Texture2D" uid="uid://cbfnxtabmb2rs" path="res://Icons/graph_hover.png" id="13_hklnv"]
+[ext_resource type="Texture2D" uid="uid://bdw5vxr0bmuni" path="res://Icons/trash.png" id="13_ni0aj"]
+[ext_resource type="Texture2D" uid="uid://1s32f8ao33mw" path="res://Icons/play.png" id="13_xpod7"]
+[ext_resource type="Texture2D" uid="uid://cjmbcuel8vpaa" path="res://Icons/play_click.png" id="14_4hilh"]
+[ext_resource type="Texture2D" uid="uid://d2fk5ml4xvb5p" path="res://Icons/trash_click.png" id="14_r48xk"]
+[ext_resource type="Texture2D" uid="uid://dk8o5yrde8yke" path="res://Icons/play_hover.png" id="15_ho3ho"]
+[ext_resource type="Texture2D" uid="uid://bng5xgabf38om" path="res://Icons/trash_hover.png" id="15_tk7tg"]
+[ext_resource type="Texture2D" uid="uid://bm02ca8n2g0th" path="res://Icons/pause_hover.png" id="16_mvjrc"]
+[ext_resource type="Script" path="res://Interface Scripts/node_menu.gd" id="21_nfm0i"]
+[ext_resource type="PackedScene" uid="uid://dqppkvnoym3c3" path="res://scenes/graph.tscn" id="24_w0j8f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e8sx0"]
+
+[sub_resource type="Sky" id="Sky_jxij4"]
+sky_material = SubResource("ProceduralSkyMaterial_e8sx0")
+
+[sub_resource type="Environment" id="Environment_14pdl"]
+background_mode = 2
+sky = SubResource("Sky_jxij4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oewpa"]
+albedo_texture = ExtResource("2_t3j7i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_22pey"]
+
+[node name="RootCanvas" type="CanvasLayer"]
+
+[node name="Root3D" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Root3D"]
+environment = SubResource("Environment_14pdl")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Root3D"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="Root3D/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Root3D/SubViewportContainer/SubViewport" node_paths=PackedStringArray("road_manager", "agent_manager")]
+transform = Transform3D(1, 0, 0, 0, 0.675268, 0.737572, 0, -0.737572, 0.675268, 0, 6.03981, 8.15429)
+script = ExtResource("1_2xtao")
+road_manager = NodePath("../Road Manager")
+agent_manager = NodePath("../Agent Manager")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Root3D/SubViewportContainer/SubViewport"]
+transform = Transform3D(90.1416, -0.668662, -6.71259e-10, 0, -1.89877e-06, 0.997624, -1.38773, -43.4336, -4.36024e-08, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_oewpa")
+mesh = SubResource("QuadMesh_22pey")
+skeleton = NodePath("../../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Root3D/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.971001, 0.239076, 0, -0.239076, 0.971001, 0, 0, 0)
+
+[node name="Road Manager" type="Node" parent="Root3D/SubViewportContainer/SubViewport" node_paths=PackedStringArray("camera", "road_button", "node_button", "ode_solver", "node_menu", "graph", "agent_manager", "agent_graph")]
+script = ExtResource("3_7hj05")
+camera = NodePath("../Camera3D")
+road_button = NodePath("../../../../Panel/road_button")
+node_button = NodePath("../../../../Panel/node_button")
+ode_solver = NodePath("../../ODE Solver")
+node_menu = NodePath("../../../../NodeMenu")
+graph = NodePath("../../../../graph")
+agent_manager = NodePath("../Agent Manager")
+agent_graph = NodePath("../../../../graph2")
+
+[node name="Agent Manager" type="Node" parent="Root3D/SubViewportContainer/SubViewport" node_paths=PackedStringArray("ode_solver")]
+script = ExtResource("4_mv4ju")
+ode_solver = NodePath("../../ODE Solver")
+
+[node name="ODE Solver" type="Node" parent="Root3D/SubViewportContainer" node_paths=PackedStringArray("pause_button")]
+script = ExtResource("4_aaa01")
+pause_button = NodePath("../../../Panel2/pause")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 21.0
+offset_right = 97.0
+offset_bottom = 252.0
+
+[node name="node_button" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 18.0
+offset_right = 63.0
+offset_bottom = 68.0
+texture_normal = ExtResource("4_oj4wh")
+texture_pressed = ExtResource("5_5gacv")
+texture_hover = ExtResource("5_rdvf2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="road_button" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 88.0
+offset_right = 62.0
+offset_bottom = 138.0
+texture_normal = ExtResource("5_hws1q")
+texture_pressed = ExtResource("8_ctt42")
+texture_hover = ExtResource("7_5t4we")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="graph_button" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 160.0
+offset_right = 62.0
+offset_bottom = 210.0
+texture_normal = ExtResource("11_nco5a")
+texture_pressed = ExtResource("12_yhi44")
+texture_hover = ExtResource("13_hklnv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 15.0
+offset_top = 580.0
+offset_right = 340.0
+offset_bottom = 637.0
+
+[node name="pause" type="TextureButton" parent="Panel2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 51.0
+texture_normal = ExtResource("13_xpod7")
+texture_pressed = ExtResource("14_4hilh")
+texture_hover = ExtResource("15_ho3ho")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("11_yo0le")
+paused_normal = ExtResource("13_xpod7")
+paused_hover = ExtResource("15_ho3ho")
+playing_normal = ExtResource("12_i3us8")
+playing_hover = ExtResource("16_mvjrc")
+
+[node name="NodeMenu" type="Panel" parent="." node_paths=PackedStringArray("close_button", "erase_button", "solver", "apply_button", "graph")]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -365.0
+offset_top = 20.0
+offset_right = -54.0
+offset_bottom = 419.0
+grow_horizontal = 0
+script = ExtResource("21_nfm0i")
+close_button = NodePath("Panel2/CloseButton")
+erase_button = NodePath("EraseButton")
+solver = NodePath("../Root3D/SubViewportContainer/ODE Solver")
+apply_button = NodePath("ApplyButton")
+graph = NodePath("../graph")
+
+[node name="EraseButton" type="TextureButton" parent="NodeMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -51.0
+offset_right = -13.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("13_ni0aj")
+texture_pressed = ExtResource("14_r48xk")
+texture_hover = ExtResource("15_tk7tg")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Panel2" type="Panel" parent="NodeMenu"]
+layout_mode = 0
+offset_right = 311.0
+offset_bottom = 40.0
+
+[node name="CloseButton" type="TextureButton" parent="NodeMenu/Panel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -35.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 37.0
+grow_horizontal = 0
+texture_normal = ExtResource("10_ucv8d")
+texture_pressed = ExtResource("11_y6lwg")
+texture_hover = ExtResource("12_m3bck")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ApplyButton" type="Button" parent="NodeMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -54.0
+offset_right = 84.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "Apply"
+
+[node name="graph" parent="." node_paths=PackedStringArray("graph_button") instance=ExtResource("24_w0j8f")]
+visible = false
+position = Vector2(828, 436)
+scale = Vector2(0.5, 0.5)
+graph_button = NodePath("../Panel/graph_button")
+graph_name = "ODE Model"
+
+[node name="graph2" parent="." node_paths=PackedStringArray("graph_button") instance=ExtResource("24_w0j8f")]
+visible = false
+position = Vector2(549, 437)
+scale = Vector2(0.5, 0.5)
+graph_button = NodePath("../Panel/graph_button")
+graph_name = "Agent Model"

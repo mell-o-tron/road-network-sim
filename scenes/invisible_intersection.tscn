@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp456yyopjmjp"]
+
+[ext_resource type="Script" path="res://ODE Solver/Intersection.gd" id="1_4atkd"]
+
+[node name="Intersection" type="Node3D"]
+script = ExtResource("1_4atkd")
+is_invisible = true

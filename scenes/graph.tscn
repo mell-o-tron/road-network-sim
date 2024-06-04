@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqppkvnoym3c3"]
+
+[ext_resource type="Script" path="res://Interface Scripts/graph.gd" id="1_88cfa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew24s"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="graph" type="Node2D" node_paths=PackedStringArray("line", "max_label", "graph_name_label", "value_label", "dump_button")]
+script = ExtResource("1_88cfa")
+line = NodePath("Panel/Panel/Line2D")
+edge = 400.0
+max_height = 200.0
+max_label = NodePath("Panel/Label2")
+graph_name_label = NodePath("Graph_name")
+value_label = NodePath("Panel/Current Value")
+dump_button = NodePath("Panel/Dump Button")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1.0
+offset_right = 535.0
+offset_bottom = 439.0
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 72.0
+offset_right = 505.0
+offset_bottom = 410.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ew24s")
+
+[node name="Line2D" type="Line2D" parent="Panel/Panel"]
+position = Vector2(19, 261)
+points = PackedVector2Array(0, -4)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 317.0
+offset_right = 64.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 23
+text = "0"
+horizontal_alignment = 1
+
+[node name="Current Value" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 233.0
+offset_right = 491.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0.00"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 115.0
+offset_right = 62.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 24
+text = "max"
+horizontal_alignment = 1
+
+[node name="Dump Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 13.0
+offset_right = -28.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "Dump"
+
+[node name="Graph_name" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 232.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 39
+text = "Label"

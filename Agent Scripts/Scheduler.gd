@@ -1,0 +1,16 @@
+extends Node
+
+@export var intersection : Node
+
+var awaiting_queue : Array
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	awaiting_queue = []
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+
+	pass

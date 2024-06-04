@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dugi5n1miassy"]
+
+[ext_resource type="Script" path="res://Interface Scripts/bool_panel.gd" id="1_40yc8"]
+
+[node name="BoolPanel" type="Node2D" node_paths=PackedStringArray("label", "button")]
+script = ExtResource("1_40yc8")
+label = NodePath("bool_panel/Label")
+button = NodePath("bool_panel/is_source")
+
+[node name="bool_panel" type="Panel" parent="."]
+offset_left = 10.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="bool_panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 242.0
+offset_bottom = 34.0
+text = "prop_name"
+
+[node name="is_source" type="CheckButton" parent="bool_panel"]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 9.0
+offset_right = 287.0
+offset_bottom = 33.0
