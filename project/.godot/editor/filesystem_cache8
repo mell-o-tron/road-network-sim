@@ -1,0 +1,91 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1717493679
+Game_State_Temple.gd::GDScript::-1::1716451158::0::1::::<>Node<>::
+new_theme.tres::Theme::1126339734791097160::1715351757::0::1::::<><>::
+node_2d.tscn::PackedScene::1502900398233669548::1715351757::0::1::::<><>::uid://fh8iuj5tgjt0::::res://textures/Screenshot_20240419_215025.png<>res://ODE Solver/Road.gd<>res://ODE Solver/Intersection.gd<>uid://bc03wsjyl3h6b::::res://textures/you-are-here-symbol-png-2-2270203676.png<>res://ODE Solver/Solver.gd<>uid://qbuwen4klbdg::::res://new_theme.tres
+pisa.tscn::PackedScene::3821363247368260522::1716471424::0::1::::<><>::res://Interface Scripts/Camera3D.gd<>res://Interface Scripts/road_manager.gd<>res://Agent Scripts/agent_manager.gd<>res://ODE Solver/Solver.gd<>uid://dn7frik4i2i5c::::res://Icons/intersection.png<>uid://b05dq615uilpf::::res://Icons/intersection_click.png<>uid://bdanmddg8fi3i::::res://Icons/intersection_hover.png<>uid://tx2gi554ad86::::res://Icons/road.png<>uid://hdg06b8e0scx::::res://Icons/road_click.png<>uid://demas55w1cqhg::::res://Icons/road_hover.png<>uid://c1fop48kx0fj4::::res://Icons/save.png<>uid://b3lb2g0hp5ju5::::res://Icons/graph.png<>uid://p3dgsd2ixfcm::::res://Icons/load.png<>uid://c6ugamwqj0noc::::res://Icons/graph_click.png<>uid://cbfnxtabmb2rs::::res://Icons/graph_hover.png<>uid://1s32f8ao33mw::::res://Icons/play.png<>uid://cjmbcuel8vpaa::::res://Icons/play_click.png<>uid://dk8o5yrde8yke::::res://Icons/play_hover.png<>res://Interface Scripts/PauseButton.gd<>uid://blfkkemyufrkh::::res://Icons/pause.png<>uid://bm02ca8n2g0th::::res://Icons/pause_hover.png<>res://Interface Scripts/node_menu.gd<>uid://43xigtxmy4x6::::res://Icons/fastfwd.png<>res://speedup.gd<>uid://bdw5vxr0bmuni::::res://Icons/trash.png<>uid://d2fk5ml4xvb5p::::res://Icons/trash_click.png<>uid://cn2bl08v7dpwr::::res://Icons/fastfwd_click.png<>uid://4jovmx8e5pcf::::res://Icons/fastfwd_hover.png<>uid://bng5xgabf38om::::res://Icons/trash_hover.png<>uid://80pq5xspbbdi::::res://Icons/close.png<>uid://dmu23f1nkh55e::::res://Icons/close_click.png<>uid://d0kwha8fp7r2h::::res://Icons/close_hover.png<>uid://buvpjgymmg80m::::res://Environments/Pisa.glb<>uid://dqppkvnoym3c3::::res://scenes/graph.tscn<>uid://satl1c76vc00::::res://Environments/mappa_grande.png<>res://Game_State_Temple.gd
+scene_3d.tscn::PackedScene::8577219662815222604::1716471423::0::1::::<><>::res://Interface Scripts/Camera3D.gd<>uid://fh8iuj5tgjt0::::res://textures/Screenshot_20240419_215025.png<>res://Interface Scripts/road_manager.gd<>res://ODE Solver/Solver.gd<>res://Agent Scripts/agent_manager.gd<>uid://dn7frik4i2i5c::::res://Icons/intersection.png<>uid://b05dq615uilpf::::res://Icons/intersection_click.png<>uid://tx2gi554ad86::::res://Icons/road.png<>uid://bdanmddg8fi3i::::res://Icons/intersection_hover.png<>uid://demas55w1cqhg::::res://Icons/road_hover.png<>uid://hdg06b8e0scx::::res://Icons/road_click.png<>uid://80pq5xspbbdi::::res://Icons/close.png<>uid://b3lb2g0hp5ju5::::res://Icons/graph.png<>uid://dmu23f1nkh55e::::res://Icons/close_click.png<>res://Interface Scripts/PauseButton.gd<>uid://blfkkemyufrkh::::res://Icons/pause.png<>uid://d0kwha8fp7r2h::::res://Icons/close_hover.png<>uid://c6ugamwqj0noc::::res://Icons/graph_click.png<>uid://cbfnxtabmb2rs::::res://Icons/graph_hover.png<>uid://bdw5vxr0bmuni::::res://Icons/trash.png<>uid://1s32f8ao33mw::::res://Icons/play.png<>uid://cjmbcuel8vpaa::::res://Icons/play_click.png<>uid://d2fk5ml4xvb5p::::res://Icons/trash_click.png<>uid://dk8o5yrde8yke::::res://Icons/play_hover.png<>uid://bng5xgabf38om::::res://Icons/trash_hover.png<>uid://bm02ca8n2g0th::::res://Icons/pause_hover.png<>res://Interface Scripts/node_menu.gd<>uid://dqppkvnoym3c3::::res://scenes/graph.tscn
+speedup.gd::GDScript::-1::1716295053::0::1::::<>TextureButton<>::
+::res://Agent Scripts/::1716471184
+agent_manager.gd::GDScript::-1::1716451158::0::1::::<>Node<>::
+car.gd::GDScript::-1::1716471184::0::1::::<>Node3D<>::
+Density Monitor.gd::GDScript::-1::1716451158::0::1::::<>Node<>::
+FlowMonitor.gd::GDScript::-1::1716295053::0::1::::<>Node<>::
+Scheduler.gd::GDScript::-1::1715849831::0::1::::<>Node<>::
+::res://Blender/::1716295053
+::res://Environments/::1716295077
+mappa_grande.png::CompressedTexture2D::1264573822273000715::1716295053::1717493682::1::::<><>::
+mappa_grande_old.png::CompressedTexture2D::1302382572921816045::1716295053::1717493683::1::::<><>::
+Pisa.glb::PackedScene::3834476669102587858::1715849831::1717493683::1::::<><>::uid://dr1vn8w5idi6k::::res://materials/rooftops.tres<>uid://dk7vvbvakpaol::::res://materials/houses.tres
+Pisa_GOOGLE_SAT_WM.png::CompressedTexture2D::6041624588895549820::1715849831::1717493681::1::::<><>::
+Pisa_Pisa_GOOGLE_SAT_WM.png::CompressedTexture2D::7912996764213349849::1715851559::1717493681::1::::<><>::
+::res://Icons/::1716295076
+arrow.png::CompressedTexture2D::4155518664426734355::1715433317::1717493681::1::::<><>::
+car.png::CompressedTexture2D::8017202729605347290::1715264418::1717493681::1::::<><>::
+car_blue.png::CompressedTexture2D::3603085107872012857::1715676858::1717493681::1::::<><>::
+car_click.png::CompressedTexture2D::5642303170457608243::1715264418::1717493681::1::::<><>::
+car_hover.png::CompressedTexture2D::5076162314407571325::1715264418::1717493681::1::::<><>::
+car_yellow.png::CompressedTexture2D::397904477603781336::1715676844::1717493681::1::::<><>::
+close.png::CompressedTexture2D::2368782223569467498::1715344682::1717493681::1::::<><>::
+close_click.png::CompressedTexture2D::8044505394236919152::1715344682::1717493681::1::::<><>::
+close_hover.png::CompressedTexture2D::8935975245195953201::1715344682::1717493682::1::::<><>::
+crash.png::CompressedTexture2D::1959569251582269172::1715871580::1717493682::1::::<><>::
+fastfwd.png::CompressedTexture2D::2094690165354893889::1715264418::1717493682::1::::<><>::
+fastfwd_click.png::CompressedTexture2D::5741116259825299377::1715264418::1717493682::1::::<><>::
+fastfwd_hover.png::CompressedTexture2D::2054944072176824597::1715264418::1717493682::1::::<><>::
+graph.png::CompressedTexture2D::4374525748380358506::1715438935::1717493682::1::::<><>::
+graph_click.png::CompressedTexture2D::6990348042208891114::1715438979::1717493682::1::::<><>::
+graph_hover.png::CompressedTexture2D::4854183491965505320::1715438963::1717493682::1::::<><>::
+intersection.png::CompressedTexture2D::8138111486928087318::1715264418::1717493680::1::::<><>::
+intersection_click.png::CompressedTexture2D::4203285500725368047::1715264418::1717493680::1::::<><>::
+intersection_hover.png::CompressedTexture2D::2597798127561403032::1715264418::1717493680::1::::<><>::
+load.png::CompressedTexture2D::1110829048718961084::1716295053::1717493680::1::::<><>::
+pause.png::CompressedTexture2D::3169445110096916743::1715264418::1717493680::1::::<><>::
+pause_click.png::CompressedTexture2D::8283867333099294332::1715264418::1717493680::1::::<><>::
+pause_hover.png::CompressedTexture2D::3281939233199041073::1715264418::1717493680::1::::<><>::
+play.png::CompressedTexture2D::1863817340009949598::1715264418::1717493680::1::::<><>::
+play_click.png::CompressedTexture2D::5429378838948739156::1715264418::1717493680::1::::<><>::
+play_hover.png::CompressedTexture2D::7930179852024532256::1715264418::1717493680::1::::<><>::
+road.png::CompressedTexture2D::1382719258966868765::1715264418::1717493680::1::::<><>::
+road_click.png::CompressedTexture2D::497925616807003915::1715264418::1717493680::1::::<><>::
+road_hover.png::CompressedTexture2D::7464823726049496356::1715264418::1717493680::1::::<><>::
+save.png::CompressedTexture2D::6608951590194425499::1716295053::1717493681::1::::<><>::
+sleep.png::CompressedTexture2D::3247157029519162787::1715854447::1717493681::1::::<><>::
+trash.png::CompressedTexture2D::2644263772087955554::1715344682::1717493680::1::::<><>::
+trash_click.png::CompressedTexture2D::9065344110443528839::1715344682::1717493681::1::::<><>::
+trash_hover.png::CompressedTexture2D::3313124815748044348::1715344682::1717493681::1::::<><>::
+::res://Interface Scripts/::1716471184
+bool_panel.gd::GDScript::-1::1715357166::0::1::::<>Node<>::
+Camera3D.gd::GDScript::-1::1716295053::0::1::::<>Camera3D<>::
+graph.gd::GDScript::-1::1716370590::0::1::::<>Node<>::
+node_menu.gd::GDScript::-1::1715849831::0::1::::<>Panel<>::
+num_panel.gd::GDScript::-1::1715433317::0::1::::<>Node<>::
+PauseButton.gd::GDScript::-1::1715344682::0::1::::<>TextureButton<>::
+road_manager.gd::GDScript::-1::1716471184::0::1::::<>Node<>::
+rotate.gd::GDScript::-1::1715849831::0::1::::<>Sprite3D<>::
+::res://materials/::1716295053
+grass.tres::StandardMaterial3D::5860677540689831174::1716295053::0::1::::<><>::
+houses.tres::StandardMaterial3D::7928523219087834687::1715849831::0::1::::<><>::
+rooftops.tres::StandardMaterial3D::8407446255330400800::1715849831::0::1::::<><>::
+::res://Models/::1716370580
+apino.glb::PackedScene::3561329226723402041::1716295053::1717493683::1::::<><>::
+car.glb::PackedScene::2860854210322895934::1715590197::1717493684::1::::<><>::
+car_custom.tscn::PackedScene::307740215574805464::1716295053::0::1::::<><>::uid://bg0236urr00ko::::res://Models/car.glb
+intersection.glb::PackedScene::8926989290137093151::1715264418::1717493684::1::::<><>::
+panda.glb::PackedScene::766038294167020054::1716295053::1717493684::1::::<><>::
+scuolabus.glb::PackedScene::3997725965825155584::1716295053::1717493684::1::::<><>::
+::res://ODE Solver/::1716451158
+Intersection.gd::GDScript::-1::1716451158::0::1::::<>Node<>::
+Road.gd::GDScript::-1::1716451158::0::1::::<>Node<>::
+Solver.gd::GDScript::-1::1716295053::0::1::::<>Node<>::
+::res://scenes/::1716471424
+bool_panel.tscn::PackedScene::8575965223647992004::1716471423::0::1::::<><>::res://Interface Scripts/bool_panel.gd
+car.tscn::PackedScene::3191811406369064622::1716471424::0::1::::<><>::res://Agent Scripts/car.gd<>uid://k6csk3oifl87::::res://Models/panda.glb<>uid://bw7r7y0lcl4sq::::res://Models/scuolabus.glb<>uid://bg0236urr00ko::::res://Models/car.glb<>uid://fw0otqfcctnc::::res://Icons/car_yellow.png<>res://Interface Scripts/rotate.gd<>uid://bq0etpj0tgwmj::::res://Models/apino.glb<>uid://brlmjx22emn7f::::res://Icons/car_blue.png<>uid://bmi7g4l6uajt0::::res://Icons/sleep.png<>uid://26h24c4h0o0s::::res://Icons/crash.png
+graph.tscn::PackedScene::8314178952170746416::1716471423::0::1::::<><>::res://Interface Scripts/graph.gd
+intersection.tscn::PackedScene::2900885207780431870::1716471423::0::1::::<><>::res://ODE Solver/Intersection.gd<>res://Agent Scripts/FlowMonitor.gd
+invisible_intersection.tscn::PackedScene::8273839828203786473::1716471424::0::1::::<><>::res://ODE Solver/Intersection.gd
+menu_item_numeric.tscn::PackedScene::5328406662312485063::1716471423::0::1::::<><>::res://Interface Scripts/num_panel.gd
+road.tscn::PackedScene::8823119154344704982::1716471423::0::1::::<><>::res://ODE Solver/Road.gd<>uid://b0g71x1oh0isx::::res://Icons/arrow.png<>res://Agent Scripts/Density Monitor.gd
+::res://textures/::1715264680
+Screenshot_20240419_215025.png::CompressedTexture2D::367413875340055459::1715264418::1717493681::1::::<><>::
+you-are-here-symbol-png-2-2270203676.png::CompressedTexture2D::2580148138513830795::1715264418::1717493681::1::::<><>::
